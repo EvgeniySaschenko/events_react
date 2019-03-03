@@ -1,0 +1,22 @@
+.Header
+	min-height: 100px
+	padding: 10px 0
+	background-color: $corp-2
+	margin-bottom: 50px
+	&__row
+		display: flex
+		justify-content: space-between
+		flex-wrap: wrap
+	&__col
+			display: flex
+			flex-direction: column
+			justify-content: center
+			@media #{$pc}
+				margin-bottom: 10px
+			@media #{$phone}
+				width: 100%
+				align-items: center
+			&_3
+				@media #{$pc}
+					width: 100%
+					align-items: center

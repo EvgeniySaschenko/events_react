@@ -1,0 +1,32 @@
+.Search
+	width: 250px
+	position: relative
+	&__field
+		padding: 10px
+		border-radius: 25px
+		height: 35px
+		width: 100%
+		border: none
+		outline: none
+	&__list
+		position: absolute
+		display: none
+		background-color: #ffffff 
+	&.active
+		.Search
+			&__field
+				border-radius: 5px 5px 0 0 
+			&__list
+				display: block
+				box-shadow: 0 0 10px rgba(0, 0, 0, .3)
+				border-radius: 0 0 5px 5px
+				overflow: hidden
+				max-width: 250px
+				&-item
+					padding: 5px 10px
+					border-bottom: 1px dotted $corp-2
+					white-space: nowrap
+					&:last-child
+						border-bottom: 0
+				&-link
+					color: $text-first

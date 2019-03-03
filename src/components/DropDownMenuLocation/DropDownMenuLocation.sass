@@ -1,0 +1,27 @@
+.DropDownMenuLocation
+	position: relative
+	min-width: 250px
+	max-width: 300px
+	&__list
+		position: absolute
+		width: 100%
+		z-index: -1
+		opacity: 0
+		background-color: #ffffff
+		color: $corp-1
+		border: 1px solid $border
+		transition: .5s
+		padding: 10px
+	&__btn
+		background-color: $corp-1
+		text-transform: uppercase
+		color: #ffffff
+		font-size: 16px
+		padding: 10px
+		border-radius: 3px
+		width: 100%
+		&-icon
+			margin-right: 10px
+		&:focus ~ .DropDownMenuLocation__list
+			z-index: 10
+			opacity: 1

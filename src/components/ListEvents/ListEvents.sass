@@ -1,0 +1,62 @@
+.ListEvents
+	&__list
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+	&__title
+		text-align: center
+		text-transform: uppercase
+		font-size: 28px
+		margin-bottom: 15px
+	&__item
+		margin: 0 5px 10px 5px
+		width: 370px
+		border: 1px solid $border
+		display: flex
+		flex-direction: column
+		&-title
+			font-size: 22px
+			margin-bottom: 10px
+			text-transform: uppercase
+			@media #{$phone}
+				text-align: center
+		&-link-title
+			color: $text-first
+		&-description
+			margin-bottom: 10px
+		&-box-img
+			overflow: hidden
+			display: flex
+			justify-content: center
+			align-items: center
+			height: 180px
+			width: 100%
+			background-color: $substrate
+		&-price
+			font-size: 20px
+			padding: 2px 5px
+			font-weight: 700
+			&_free
+				background-color: #9ACD32
+				display: inline-block
+				color: #ffffff
+				border-radius: 5px
+				font-weight: 400
+		&-place
+			margin: 5px 0
+			color: $text-second
+		&-date-end
+				font-weight: 700
+				&-value
+					font-weight: 400
+					margin-left: 10px
+	&__row
+		&_2
+			padding: 5px
+		&_3
+			display: flex
+			align-items: flex-end
+			justify-content: center
+			text-align: center
+			margin: 10px 0
+			height: 100%

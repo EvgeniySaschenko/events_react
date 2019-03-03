@@ -1,0 +1,24 @@
+-
+	var jsLibs= {}
+	var cssLibs= {
+		"fontawesome" : "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+	}
+
+html
+	head
+		if( jsLibs )
+			each lib,libName in jsLibs
+				script(src=lib)
+				//.
+					#{libName}
+		if( cssLibs )
+			each lib,libName in cssLibs
+				link(rel='stylesheet', href=lib)
+				//.
+					#{libName}
+		
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		base(href="/")
+	body
+		div#container

@@ -1,0 +1,18 @@
+.Page
+	&__row
+		display: flex
+		@media #{$pc}
+			flex-wrap: wrap
+	&__col
+		&_content
+			width: 70%
+			@media #{$pc}
+				width: 100%
+		&_sidebar
+			flex: 1
+			flex-shrink: 0
+			margin-left: 15px
+			@media #{$pc}
+				width: 100%
+			@media #{$phone}
+				margin-left: 0

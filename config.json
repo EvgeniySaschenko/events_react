@@ -1,5 +1,5 @@
 {
-	"baseUrlData" : "http://localhost:4000/api/v1",
+	"baseUrlData" : "http://185.233.117.226:4000/api/v1",
 	"baseCity" : "kev",
 	"countQueryErr" : 100
 }

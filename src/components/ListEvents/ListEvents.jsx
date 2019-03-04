@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import PreloaderBlock from '../PreloaderBlock/PreloaderBlock.jsx';
 import Alert from '../Alert/Alert.jsx';
 import Image from '../Image/Image.jsx';
-import LazyLoad from 'react-lazy-load';
 import moment from 'moment';
 
 class ListEvents extends React.Component{
@@ -31,6 +30,10 @@ class ListEvents extends React.Component{
 			if(nextPage != prevPage && nextPage > 1){
 				this.props.loadingDataNextPage(window.currentCity, nextPage, isFreeEvents);
 			}
+		}
+		// Прокрутка вверх при нажатии на ссылку (для мобильных)
+		this.clickLink= ()=>{
+			document.body.scrollTop = document.documentElement.scrollTop = 0;
 		}
 	}
 
@@ -91,16 +94,18 @@ class ListEvents extends React.Component{
 						<div className={ `ListEvents__item` } key={i}>
 							
 								<div className="ListEvents__row ListEvents__row_1">
-									<Link className={ `ListEvents__item-box-img` } to={ link }>
-										<LazyLoad offsetVertical={600}>
-											<Image cls="ListEvents__item-img" src={ e.images[0].image } />
-										</LazyLoad>
+									<Link className={ `ListEvents__item-box-img` } 
+												to={ link }
+												onClick={ this.clickLink }>
+										<Image cls="ListEvents__item-img" src={ e.images[0].image } />
 									</Link>
 								</div>
 
 								<div className="ListEvents__row ListEvents__row_2">
 									<h3 className="ListEvents__item-title">
-										<Link className="ListEvents__item-link-title" to={ link }>
+										<Link className="ListEvents__item-link-title"
+													to={ link }
+													onClick={ this.clickLink }>
 											{ title }
 										</Link>
 									</h3>

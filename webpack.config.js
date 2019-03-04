@@ -128,7 +128,8 @@ const config = {
   },
   plugins: [
   	new HtmlWebpackPlugin({
-  		template: 'src/index.jade'
+			template: 'src/index.jade',
+			favicon: 'src/assets/img/favicon.ico'
   	}),
   	new ExtractTextPlugin(namespace.cssBundle),
   	new webpack.ProvidePlugin({

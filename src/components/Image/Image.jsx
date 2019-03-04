@@ -1,21 +1,30 @@
 import React from 'react';
-let imgPreloder= require('../../assets/img/preloader.gif');
-let imgStub= require('../../assets/img/stub.png');
+import LazyLoad from 'react-lazy-load';
 
 class Image extends React.Component{
 	constructor(props){
 		super(props);
+		this.state= {
+			load: true
+		}
 		this.loadImg= (target, src)=>{
-			target.src= src;
+			this.setState({
+				load: false
+			})
 		}
 	}
 	
 	render(){
 		let { cls, src }= this.props;
+		let { load }= this.state;
 		return(
-			<img 	className={ cls } 
-						src={ imgPreloder } 
-						onLoad={ (ev) => this.loadImg(ev.target, src) }/>
+			<div className={`Image ${load ? 'load' : ''}`}>
+				<LazyLoad offsetVertical={600}>
+					<img  className={ `${cls} Image__img ${load ? 'load' : ''}` } 
+								src={ src } 
+								onLoad={ (ev) => this.loadImg(ev.target, src) }/>
+				</LazyLoad>
+			</div>
 		)
 	}
 }

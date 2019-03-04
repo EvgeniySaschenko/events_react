@@ -2,13 +2,16 @@ import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import PreloaderBlock from '../PreloaderBlock/PreloaderBlock.jsx';
 import Image from '../Image/Image.jsx';
-import LazyLoad from 'react-lazy-load';
 
 class ListTeaser extends React.Component{
 	constructor(props){
 		super(props);
 		// Прелоадер
 		this.loader= true;
+
+		this.clickLink= ()=>{
+			document.body.scrollTop = document.documentElement.scrollTop = 0;
+		}
 	}
 
 	componentDidMount(){
@@ -40,12 +43,14 @@ class ListTeaser extends React.Component{
 			let img= images[0].image ? images[0].image : window.imgStub
 			return(
 				<div className="ListTeaser__item" key={i}>
-					<Link to={ link } className="ListTeaser__item-box-img">
-						<LazyLoad>
-							<Image cls="ListTeaser__item-img" src={ img } />
-						</LazyLoad>
+					<Link to={ link } 
+								className="ListTeaser__item-box-img"
+								onClick={ this.clickLink }>
+						<Image cls="ListTeaser__item-img" src={ img }/>
 					</Link>
-					<Link to={ link } className="ListTeaser__item-title">
+					<Link to={ link } 
+								className="ListTeaser__item-title"
+								onClick={ this.clickLink }>
 						{ title }
 					</Link>
 				</div>

@@ -9,7 +9,7 @@ webpack = require('webpack');
 del = require('del');
 HtmlWebpackPlugin = require('html-webpack-plugin');
 ExtractTextPlugin = require("extract-text-webpack-plugin");
-
+console.log(11111, process.env.NODE_ENV )
 const env = (process.env.NODE_ENV).replace(/[ ]/g,'');
 const envProduction = env === 'production';
 const envDevelopment = env === 'development';

@@ -136,9 +136,6 @@ const config = {
         _: "underscore",
         JQ: 'jquery'
 		}),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-    }),
   ],
   devtool: (envDevelopment?'source-map':false),
   devServer: {
@@ -151,7 +148,7 @@ const config = {
 // For some environment modes from specified above,
 // you may append some plugins to config by following way
 if( envProduction ){
-	config.plugins.push( new webpack.optimize.UglifyJsPlugin() )
+	config.plugins.push( new webpack.optimize.UglifyJsPlugin({mangle: false, compress: {warnings: false}}) )
 }
 
 module.exports = config;

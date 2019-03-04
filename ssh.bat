@@ -1,1 +1,1 @@
-"C:\Program Files\PuTTY\putty.exe" root@185.233.117.226 -pw 226P8nMlxXCC
+"C:\Program Files\PuTTY\putty.exe" root@185.233.117.226 -pw 226P8nMlxXCC 

@@ -1,4 +1,4 @@
 cd server-web
 sudo nodemon
-cd server-data
+cd ../server-data
 sudo nodemon

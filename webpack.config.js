@@ -135,7 +135,10 @@ const config = {
   	new webpack.ProvidePlugin({
         _: "underscore",
         JQ: 'jquery'
-    })
+		}),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    }),
   ],
   devtool: (envDevelopment?'source-map':false),
   devServer: {

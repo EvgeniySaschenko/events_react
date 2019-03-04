@@ -1,7 +1,7 @@
 # Webpack React
 * **npm i webpack-dev-server webpack nodemon -g** - устанока webpack глобально
 
-**Корневой каталог**
+**Корневой каталог (разработка)**
 ```
 npm i - установка модулей
 npm run server - запуск dev сервера (http://localhost:2000)

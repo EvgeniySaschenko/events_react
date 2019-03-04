@@ -1,5 +1,5 @@
 # Webpack React
-* **npm i webpack-dev-server webpack nodemon -g** - устанока webpack глобально
+* **npm i webpack-dev-server webpack nodemon pm2 -g** - устанока webpack глобально
 
 **Корневой каталог (разработка)**
 ```
@@ -18,4 +18,10 @@ nodemon - запуск web сервера (http://localhost:3000)
 ```
 npm i - установка модулей
 nodemon - запуск data сервера (http://localhost:4000)
+```
+
+**Запуск демонов для server-data и server-web**
+```
+pm2 start bin/www --name server-data
+pm2 start bin/www --name server-web
 ```

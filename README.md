@@ -1,5 +1,11 @@
 # Webpack React
-* **npm i webpack-dev-server webpack nodemon pm2 -g** - устанока webpack глобально
+* **npm i webpack-dev-server webpack nodemon pm2 -g** - устанока глобальных модулей 
+
+*Проект:*
+* Что использовалось: React, Redux, React Router, Node.js, Express, JSX, JavaScript, SASS, BEM, Webpack, AJAX, API
+* Функционал: получение данных по API, адаптив
+* Работа: разработка сайта на основе API https://kudago.com
+* Ссылка на сайт: http://185.233.117.226:3000
 
 **Корневой каталог (разработка)**
 ```

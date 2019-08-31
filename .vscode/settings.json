@@ -1,1 +1,10 @@
-{}
+{
+    "sshfs.configs": [
+        {
+            "host": "185.69.152.83",
+            "name": "vps",
+            "password": "Promise5555",
+            "username": "root"
+        }
+    ]
+}

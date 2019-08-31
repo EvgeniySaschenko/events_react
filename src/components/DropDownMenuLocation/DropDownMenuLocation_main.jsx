@@ -2,27 +2,25 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import API from '../../api';
 import DropDownMenuLocation from './DropDownMenuLocation.jsx';
-const config= require('../../../config.json');
 
-class DropDownMenuLocation_main extends DropDownMenuLocation{
-	constructor(props){
-		super(props);
-	}
+const config = require('../../../config.json');
+
+class DropDownMenuLocation_main extends DropDownMenuLocation {
+  constructor(props) {
+    super(props);
+  }
 }
 
 export default withRouter(connect(
-	store => {
-		return{
+  (store) => ({
 			data: store.dropDownMenuLocation_main
-		}
-	},
-	dispatch =>{
-		return{
-			init: function(slug){
-				this.init.errCounter= this.init.errCounter ? this.init.errCounter : 0;
+		}),
+  (dispatch) => ({
+			init: function (slug) {
+				this.init.errCounter = this.init.errCounter ? this.init.errCounter : 0;
 				API.cities.getCities()
-					.then((res)=>{
-						this.init.errCounter= 0;
+					.then((res) => {
+						this.init.errCounter = 0;
 						dispatch({
 							type: 'DropDownMenuLocation.main_INIT',
 							payload: {
@@ -31,14 +29,15 @@ export default withRouter(connect(
 							}
 						})
 					})
-					.catch((err)=>{
-						if(this.init.errCounter <= config.countQueryErr){
+					.catch((err) => {
+						if (this.init.errCounter <= config.countQueryErr) {
+							this.init.errCounter++;
 							this.init(slug);
 						}
-						console.log( err )
+						console.log(err)
 					})
 			},
-			changeCity: function(name, slug){
+			changeCity: function (name, slug) {
 				dispatch({
 					type: 'DropDownMenuLocation.main_CHANGE-CITY',
 					payload: {
@@ -47,6 +46,5 @@ export default withRouter(connect(
 					}
 				})
 			}
-		}
-	}
+		}),
 )(DropDownMenuLocation_main));

@@ -2,46 +2,47 @@ import { connect } from 'react-redux';
 import Nav from './Nav.jsx';
 import API from '../../api';
 import { withRouter } from 'react-router';
-const config= require('../../../config.json');
+const config = require('../../../config.json');
 
-class Nav_header extends Nav{
-	constructor(props){
+class Nav_header extends Nav {
+	constructor(props) {
 		super(props);
 	}
 }
 
 export default withRouter(connect(
 	store => {
-		return{
+		return {
 			data: store.nav_header
 		}
 	},
 	dispatch => {
-		return{
-			init: function() {
-				this.init.errCounter= this.init.errCounter ? this.init.errCounter : 0;
+		return {
+			init: function () {
+				this.init.errCounter = this.init.errCounter ? this.init.errCounter : 0;
 				API.nav.getNav('main')
-					.then((res)=>{
-						this.init.errCounter= 0;
+					.then((res) => {
+						this.init.errCounter = 0;
 						dispatch({
 							type: 'Nav.header_INIT',
 							payload: res.data
 						})
 					})
-					.catch((err)=>{
-						if(this.init.errCounter <= config.countQueryErr){
+					.catch((err) => {
+						if (this.init.errCounter <= config.countQueryErr) {
+							this.init.errCounter++;
 							this.init();
 						}
-						console.log( err )
+						console.log(err)
 					})
 			},
-			clear: function(id) {
+			clear: function (id) {
 				dispatch({
 					type: 'Nav.header_CLEAR',
 				})
 			},
 		}
-	}, 
-	null, 
+	},
+	null,
 	{ pure: false }
 )(Nav_header));

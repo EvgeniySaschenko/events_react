@@ -1,5 +1,5 @@
 {
-	"baseUrlData": "http://localhost:4000/api/v1",
+	"baseUrlData": "http://185.69.152.83:4000/api/v1",
 	"baseCity": "msk",
-	"countQueryErr": 100
+	"countQueryErr": 10
 }

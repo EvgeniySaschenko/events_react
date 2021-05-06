@@ -23,7 +23,7 @@
     "pre-commit": "^1.2.2",
     "query-string": "^6.2.0",
     "server": "file:server",
-    "underscore": "^1.8.3"
+    "underscore": "^1.12.1"
   },
   "devDependencies": {
     "axios": "^0.18.0",
